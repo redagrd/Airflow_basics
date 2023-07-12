@@ -1,0 +1,17 @@
+[2023-07-11T08:49:45.129+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: AAAA.print_date scheduled__2023-07-03T00:00:00+00:00 [queued]>
+[2023-07-11T08:49:45.162+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: AAAA.print_date scheduled__2023-07-03T00:00:00+00:00 [queued]>
+[2023-07-11T08:49:45.169+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-11T08:49:45.249+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): print_date> on 2023-07-03 00:00:00+00:00
+[2023-07-11T08:49:45.264+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'AAAA', 'print_date', 'scheduled__2023-07-03T00:00:00+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/exo1.py', '--cfg-path', '/tmp/tmpdmy00uha']
+[2023-07-11T08:49:45.269+0000] {standard_task_runner.py:85} INFO - Job 67: Subtask print_date
+[2023-07-11T08:49:45.258+0000] {standard_task_runner.py:57} INFO - Started process 1283 to run task
+[2023-07-11T08:49:45.443+0000] {task_command.py:410} INFO - Running <TaskInstance: AAAA.print_date scheduled__2023-07-03T00:00:00+00:00 [running]> on host 1d6232dcfa4d
+[2023-07-11T08:49:45.724+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='AAAA' AIRFLOW_CTX_TASK_ID='print_date' AIRFLOW_CTX_EXECUTION_DATE='2023-07-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-03T00:00:00+00:00'
+[2023-07-11T08:49:45.730+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-07-11T08:49:45.734+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'date']
+[2023-07-11T08:49:45.794+0000] {subprocess.py:86} INFO - Output:
+[2023-07-11T08:49:45.810+0000] {subprocess.py:93} INFO - Tue Jul 11 08:49:45 UTC 2023
+[2023-07-11T08:49:45.812+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-07-11T08:49:45.969+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=AAAA, task_id=print_date, execution_date=20230703T000000, start_date=20230711T084945, end_date=20230711T084945
+[2023-07-11T08:49:46.071+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-11T08:49:46.178+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

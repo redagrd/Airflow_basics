@@ -1,0 +1,52 @@
+[2023-07-11T13:31:58.537+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: exercice_1.create_file manual__2023-07-11T13:31:53.791191+00:00 [queued]>
+[2023-07-11T13:31:58.582+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: exercice_1.create_file manual__2023-07-11T13:31:53.791191+00:00 [queued]>
+[2023-07-11T13:31:58.584+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-11T13:31:58.692+0000] {taskinstance.py:1327} INFO - Executing <Task(BashOperator): create_file> on 2023-07-11 13:31:53.791191+00:00
+[2023-07-11T13:31:58.707+0000] {standard_task_runner.py:57} INFO - Started process 6188 to run task
+[2023-07-11T13:31:58.809+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'exercice_1', 'create_file', 'manual__2023-07-11T13:31:53.791191+00:00', '--job-id', '98', '--raw', '--subdir', 'DAGS_FOLDER/correction.py', '--cfg-path', '/tmp/tmp159fg_up']
+[2023-07-11T13:31:58.843+0000] {standard_task_runner.py:85} INFO - Job 98: Subtask create_file
+[2023-07-11T13:31:59.355+0000] {task_command.py:410} INFO - Running <TaskInstance: exercice_1.create_file manual__2023-07-11T13:31:53.791191+00:00 [running]> on host 1d6232dcfa4d
+[2023-07-11T13:32:00.015+0000] {abstractoperator.py:598} ERROR - Exception rendering Jinja template for task 'create_file', field 'bash_command'. Template: '/opt/***/dags/file/mon_script.sh'
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/abstractoperator.py", line 590, in _do_render_template_fields
+    seen_oids,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/template/templater.py", line 153, in render_template
+    template = jinja_env.get_template(value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /opt/airflow/dags/file/mon_script.sh
+[2023-07-11T13:32:00.027+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1407, in _run_raw_task
+    self._execute_task_with_callbacks(context, test_mode)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1531, in _execute_task_with_callbacks
+    task_orig = self.render_templates(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2179, in render_templates
+    original_task.render_template_fields(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/baseoperator.py", line 1254, in render_template_fields
+    self._do_render_template_fields(self, self.template_fields, context, jinja_env, set())
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/abstractoperator.py", line 590, in _do_render_template_fields
+    seen_oids,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/template/templater.py", line 153, in render_template
+    template = jinja_env.get_template(value)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: /opt/airflow/dags/file/mon_script.sh
+[2023-07-11T13:32:00.113+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=exercice_1, task_id=create_file, execution_date=20230711T133153, start_date=20230711T133158, end_date=20230711T133200
+[2023-07-11T13:32:00.222+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 98 for task create_file (/opt/airflow/dags/file/mon_script.sh; 6188)
+[2023-07-11T13:32:00.272+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-11T13:32:00.387+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

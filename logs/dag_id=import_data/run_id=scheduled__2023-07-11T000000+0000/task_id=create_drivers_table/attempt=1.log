@@ -1,0 +1,78 @@
+[2023-07-11T14:52:57.612+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: import_data.create_drivers_table scheduled__2023-07-11T00:00:00+00:00 [queued]>
+[2023-07-11T14:52:57.624+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: import_data.create_drivers_table scheduled__2023-07-11T00:00:00+00:00 [queued]>
+[2023-07-11T14:52:57.625+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-11T14:52:57.649+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): create_drivers_table> on 2023-07-11 00:00:00+00:00
+[2023-07-11T14:52:57.656+0000] {standard_task_runner.py:57} INFO - Started process 7982 to run task
+[2023-07-11T14:52:57.663+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'import_data', 'create_drivers_table', 'scheduled__2023-07-11T00:00:00+00:00', '--job-id', '224', '--raw', '--subdir', 'DAGS_FOLDER/import_data.py', '--cfg-path', '/tmp/tmp5su3y4hb']
+[2023-07-11T14:52:57.664+0000] {standard_task_runner.py:85} INFO - Job 224: Subtask create_drivers_table
+[2023-07-11T14:52:57.736+0000] {task_command.py:410} INFO - Running <TaskInstance: import_data.create_drivers_table scheduled__2023-07-11T00:00:00+00:00 [running]> on host 1d6232dcfa4d
+[2023-07-11T14:52:57.849+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='import_data' AIRFLOW_CTX_TASK_ID='create_drivers_table' AIRFLOW_CTX_EXECUTION_DATE='2023-07-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-11T00:00:00+00:00'
+[2023-07-11T14:52:57.852+0000] {sql.py:265} INFO - Executing: DROP TABLE IF EXISTS drivers_data;
+CREATE TABLE drivers_data (
+    "school_year" TEXT,
+    "vendor_name" TEXT,
+    "type_of_service" TEXT,
+    "active_employees" TEXT,
+    "job_type" TEXT,
+);
+[2023-07-11T14:52:57.867+0000] {base.py:73} INFO - Using connection ID 'tutorial_pg_conn' for task execution.
+[2023-07-11T14:52:58.008+0000] {base.py:73} INFO - Using connection ID 'tutorial_pg_conn' for task execution.
+[2023-07-11T14:52:58.014+0000] {sql.py:375} INFO - Running statement: DROP TABLE IF EXISTS drivers_data;
+CREATE TABLE drivers_data (
+    "school_year" TEXT,
+    "vendor_name" TEXT,
+    "type_of_service" TEXT,
+    "active_employees" TEXT,
+    "job_type" TEXT,
+);, parameters: None
+[2023-07-11T14:52:58.016+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 277, in execute
+    **extra_kwargs,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 349, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 380, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near ")"
+LINE 8: );
+        ^
+
+[2023-07-11T14:52:58.030+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=import_data, task_id=create_drivers_table, execution_date=20230711T000000, start_date=20230711T145257, end_date=20230711T145258
+[2023-07-11T14:52:58.048+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 224 for task create_drivers_table (syntax error at or near ")"
+LINE 8: );
+        ^
+; 7982)
+[2023-07-11T14:52:58.075+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-11T14:52:58.157+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-07-12T07:14:06.214+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: import_data.create_drivers_table scheduled__2023-07-11T00:00:00+00:00 [queued]>
+[2023-07-12T07:14:06.227+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: import_data.create_drivers_table scheduled__2023-07-11T00:00:00+00:00 [queued]>
+[2023-07-12T07:14:06.228+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-12T07:14:06.246+0000] {taskinstance.py:1327} INFO - Executing <Task(PostgresOperator): create_drivers_table> on 2023-07-11 00:00:00+00:00
+[2023-07-12T07:14:06.252+0000] {standard_task_runner.py:57} INFO - Started process 87 to run task
+[2023-07-12T07:14:06.256+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'import_data', 'create_drivers_table', 'scheduled__2023-07-11T00:00:00+00:00', '--job-id', '264', '--raw', '--subdir', 'DAGS_FOLDER/import_data.py', '--cfg-path', '/tmp/tmpvrvp20zv']
+[2023-07-12T07:14:06.257+0000] {standard_task_runner.py:85} INFO - Job 264: Subtask create_drivers_table
+[2023-07-12T07:14:06.322+0000] {task_command.py:410} INFO - Running <TaskInstance: import_data.create_drivers_table scheduled__2023-07-11T00:00:00+00:00 [running]> on host 1d6232dcfa4d
+[2023-07-12T07:14:06.430+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='import_data' AIRFLOW_CTX_TASK_ID='create_drivers_table' AIRFLOW_CTX_EXECUTION_DATE='2023-07-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-07-11T00:00:00+00:00'
+[2023-07-12T07:14:06.434+0000] {sql.py:265} INFO - Executing: DROP TABLE IF EXISTS drivers_data;
+CREATE TABLE drivers_data (
+    "school_year" TEXT,
+    "vendor_name" TEXT,
+    "type_of_service" TEXT,
+    "active_employees" TEXT,
+    "job_type" TEXT
+);
+
+[2023-07-12T07:14:06.445+0000] {base.py:73} INFO - Using connection ID 'tutorial_pg_conn' for task execution.
+[2023-07-12T07:14:06.538+0000] {base.py:73} INFO - Using connection ID 'tutorial_pg_conn' for task execution.
+[2023-07-12T07:14:06.544+0000] {sql.py:375} INFO - Running statement: DROP TABLE IF EXISTS drivers_data;
+CREATE TABLE drivers_data (
+    "school_year" TEXT,
+    "vendor_name" TEXT,
+    "type_of_service" TEXT,
+    "active_employees" TEXT,
+    "job_type" TEXT
+);
+, parameters: None
+[2023-07-12T07:14:06.589+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=import_data, task_id=create_drivers_table, execution_date=20230711T000000, start_date=20230712T071406, end_date=20230712T071406
+[2023-07-12T07:14:06.628+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-12T07:14:06.662+0000] {taskinstance.py:2653} INFO - 1 downstream tasks scheduled from follow-on schedule check

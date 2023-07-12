@@ -1,0 +1,22 @@
+[2023-07-11T13:42:04.409+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: exercice_1.save_data manual__2023-07-11T13:41:56.733991+00:00 [queued]>
+[2023-07-11T13:42:04.441+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: exercice_1.save_data manual__2023-07-11T13:41:56.733991+00:00 [queued]>
+[2023-07-11T13:42:04.444+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 2
+[2023-07-11T13:42:04.485+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): save_data> on 2023-07-11 13:41:56.733991+00:00
+[2023-07-11T13:42:04.499+0000] {standard_task_runner.py:57} INFO - Started process 6525 to run task
+[2023-07-11T13:42:04.515+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'exercice_1', 'save_data', 'manual__2023-07-11T13:41:56.733991+00:00', '--job-id', '148', '--raw', '--subdir', 'DAGS_FOLDER/correction.py', '--cfg-path', '/tmp/tmp4_ehayra']
+[2023-07-11T13:42:04.522+0000] {standard_task_runner.py:85} INFO - Job 148: Subtask save_data
+[2023-07-11T13:42:04.644+0000] {task_command.py:410} INFO - Running <TaskInstance: exercice_1.save_data manual__2023-07-11T13:41:56.733991+00:00 [running]> on host 1d6232dcfa4d
+[2023-07-11T13:42:04.868+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='exercice_1' AIRFLOW_CTX_TASK_ID='save_data' AIRFLOW_CTX_EXECUTION_DATE='2023-07-11T13:41:56.733991+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-11T13:41:56.733991+00:00'
+[2023-07-11T13:42:04.893+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/correction.py", line 11, in save_inFile
+    .format(context["execution_date"], nb_random())
+NameError: name 'nb_random' is not defined
+[2023-07-11T13:42:04.962+0000] {taskinstance.py:1350} INFO - Marking task as UP_FOR_RETRY. dag_id=exercice_1, task_id=save_data, execution_date=20230711T134156, start_date=20230711T134204, end_date=20230711T134204
+[2023-07-11T13:42:05.003+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 148 for task save_data (name 'nb_random' is not defined; 6525)
+[2023-07-11T13:42:05.057+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-07-11T13:42:05.125+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

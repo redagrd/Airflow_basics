@@ -1,0 +1,13 @@
+[2023-07-11T15:08:24.620+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: AAAA.get_data_to_local manual__2023-07-11T15:08:20.294493+00:00 [queued]>
+[2023-07-11T15:08:24.631+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: AAAA.get_data_to_local manual__2023-07-11T15:08:20.294493+00:00 [queued]>
+[2023-07-11T15:08:24.632+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-07-11T15:08:24.653+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonDecoratedOperator): get_data_to_local> on 2023-07-11 15:08:20.294493+00:00
+[2023-07-11T15:08:24.659+0000] {standard_task_runner.py:57} INFO - Started process 8260 to run task
+[2023-07-11T15:08:24.664+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'AAAA', 'get_data_to_local', 'manual__2023-07-11T15:08:20.294493+00:00', '--job-id', '230', '--raw', '--subdir', 'DAGS_FOLDER/import_data2.py', '--cfg-path', '/tmp/tmpdo_1m_wj']
+[2023-07-11T15:08:24.666+0000] {standard_task_runner.py:85} INFO - Job 230: Subtask get_data_to_local
+[2023-07-11T15:08:24.724+0000] {task_command.py:410} INFO - Running <TaskInstance: AAAA.get_data_to_local manual__2023-07-11T15:08:20.294493+00:00 [running]> on host 1d6232dcfa4d
+[2023-07-11T15:08:24.823+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='AAAA' AIRFLOW_CTX_TASK_ID='get_data_to_local' AIRFLOW_CTX_EXECUTION_DATE='2023-07-11T15:08:20.294493+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-07-11T15:08:20.294493+00:00'
+[2023-07-11T15:08:25.619+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-07-11T15:08:25.635+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=AAAA, task_id=get_data_to_local, execution_date=20230711T150820, start_date=20230711T150824, end_date=20230711T150825
+[2023-07-11T15:08:25.680+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-07-11T15:08:25.703+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
