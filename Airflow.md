@@ -3,20 +3,20 @@
 
 ## Bases
 
-DAG = Directed Acyclic Graph
+DAG = Directed Acyclic Graph  
 constitué de tâches (tasks) et d'opérateurs (operators), c'est l'équivalent d'un script python
 
-Paramètres d'une tâche:
+Paramètres d'une tâche:  
 
-dag_id: identifiant du flux de travail
+dag_id: identifiant du flux de travail  
 
-start_date: date de début du flux de travail
+start_date: date de début du flux de travail  
 
-schedule_interval: fréquence d'exécution du flux de travail
+schedule_interval: fréquence d'exécution du flux de travail  
 
-catchup: relance l'execution si echec
+catchup: relance l'execution si echec  
 
-dagrun_timeout: la durée maximale d'exécution du flux de travail
+dagrun_timeout: la durée maximale d'exécution du flux de travail  
 
 Scheduler:
 
