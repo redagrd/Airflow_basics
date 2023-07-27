@@ -12,7 +12,7 @@ Démonstration d'airflow déployé sur un container docker, avec une série d'ex
 - Docker
 - Docker-compose
 
-## démarrer le Airflow
+## Démarrer le Airflow
 
 ```bash
 curl -O docker-compose.yaml
